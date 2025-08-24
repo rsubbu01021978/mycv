@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subramanian Ramachandran - Executive CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+            font-size: 14px;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        /* Header Section */
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 50px;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #2ecc71, #f39c12, #e74c3c);
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 1.3rem;
+            color: #bdc3c7;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            font-size: 0.95rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item span:first-child {
+            font-size: 16px;
+            width: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 0;
+        }
+
+        .content-left {
+            padding: 40px 50px;
+            padding-right: 30px;
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-left: 1px solid #e9ecef;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 35px;
+            page-break-inside: avoid;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #e74c3c;
+        }
+
+        /* Summary */
+        .summary-text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .summary-points {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .summary-points li {
+            position: relative;
+            padding: 6px 0 6px 20px;
+            font-weight: 500;
+        }
+
+        .summary-points li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        /* Competencies */
+        .competency-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .competency-item {
+            background: #fff;
+            border-left: 4px solid;
+            padding: 18px;
+            border-radius: 0 8px 8px 0;
+            transition: transform 0.2s ease;
+        }
+
+        .competency-item:hover {
+            transform: translateX(5px);
+        }
+
+        .competency-item:nth-child(1) { border-left-color: #e74c3c; background: #fdf2f2; }
+        .competency-item:nth-child(2) { border-left-color: #3498db; background: #f4f8fb; }
+        .competency-item:nth-child(3) { border-left-color: #2ecc71; background: #f1f8f4; }
+        .competency-item:nth-child(4) { border-left-color: #f39c12; background: #fef9f1; }
+        .competency-item:nth-child(5) { border-left-color: #9b59b6; background: #f7f3f9; }
+
+        .competency-title {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .competency-skills {
+            color: #5a6c7d;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e9ecef;
+            page-break-inside: avoid;
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .role-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 4px;
+        }
+
+        .company {
+            color: #3498db;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .period {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            text-align: right;
+            font-weight: 500;
+        }
+
+        .experience-points {
+            list-style: none;
+        }
+
+        .experience-points li {
+            position: relative;
+            padding: 8px 0 8px 25px;
+            line-height: 1.5;
+            color: #34495e;
+        }
+
+        .experience-points li::before {
+            content: '•';
+            position: absolute;
+            left: 8px;
+            color: #3498db;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Sidebar */
+        .sidebar-section {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #bdc3c7;
+        }
+
+        .sidebar-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            border-left: 3px solid #3498db;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-item-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+
+        .sidebar-item-detail {
+            color: #7f8c8d;
+            font-size: 0.85rem;
+            line-height: 1.3;
+        }
+
+        /* Awards */
+        .award-item {
+            background: white;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #f39c12;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .award-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 3px;
+            font-size: 0.9rem;
+        }
+
+        .award-org {
+            color: #7f8c8d;
+            font-size: 0.8rem;
+        }
+
+        /* Thought Leadership */
+        .thought-leadership {
+            background: #34495e;
+            color: white;
+            padding: 30px 50px;
+            page-break-inside: avoid;
+        }
+
+        .thought-leadership .section-title {
+            color: white;
+            border-bottom-color: #3498db;
+        }
+
+        .content-category {
+            margin-bottom: 20px;
+        }
+
+        .content-category h4 {
+            color: #bdc3c7;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .content-item {
+            background: rgba(255,255,255,0.1);
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            border-left: 3px solid #3498db;
+        }
+
+        .content-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .content-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Key Achievements */
+        .achievements-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .achievement-item {
+            background: #f8f9fa;
+            padding: 18px;
+            border-radius: 6px;
+            border-left: 4px solid #2ecc71;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Additional Info */
+        .additional-info {
+            background: #2c3e50;
+            color: white;
+            padding: 25px 50px;
+            text-align: center;
+            page-break-inside: avoid;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 15px;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-item h4 {
+            margin-bottom: 8px;
+            color: #bdc3c7;
+        }
+
+        .info-item p {
+            font-size: 0.9rem;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                font-size: 12px;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                max-width: none;
+            }
+            
+            .header {
+                background: #2c3e50 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .thought-leadership {
+                background: #34495e !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .additional-info {
+                background: #2c3e50 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .competency-item, .sidebar-item, .award-item, .content-item, .achievement-item {
+                -webkit-print-color-adjust: exact;
+                page-break-inside: avoid;
+            }
+            
+            .section, .experience-item, .sidebar-section {
+                page-break-inside: avoid;
+            }
+            
+            .print-btn { display: none; }
+            
+            * {
+                -webkit-print-color-adjust: exact;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-left, .sidebar {
+                padding: 30px 25px;
+            }
+            
+            .header {
+                padding: 30px 25px;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="name">SUBRAMANIAN RAMACHANDRAN</h1>
+            <p class="title">Manager, Internationalization Development | Product Leader</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>✉</span>
+                    <span>ramsubramanian1978@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>+91-9952094202</span>
+                </div>
+                <div class="contact-item">
+                    <span>🔗</span>
+                    <a href="https://www.linkedin.com/in/subramanian-ramachandran-pmp-6021458" target="_blank" style="color: inherit;">LinkedIn Profile</a>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Bangalore, India</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="content-left">
+                <!-- Professional Summary -->
+                <div class="section">
+                    <h2 class="section-title">Professional Summary</h2>
+                    <p class="summary-text">
+                        Results-driven <strong>Product Leader</strong> with <strong>24+ years</strong> experience, including <strong>22+ years</strong> at Oracle, specializing in <strong>functional, internationalization</strong>, <strong>globalization enablement</strong>, and <strong>building and managing India team in a truly global organization across US, Europe, JAPAC</strong>.
+                    </p>
+                    <ul class="summary-points">
+                        <li>Proven track record of leading enterprise-grade automation solutions and scaling teams from inception</li>
+                        <li>Currently pursuing <strong>Executive MBA in Product Leadership</strong> (4th semester in progress)</li>
+                    </ul>
+                </div>
+
+                <!-- Core Competencies -->
+                <div class="section">
+                    <h2 class="section-title">Core Competencies</h2>
+                    <div class="competency-grid">
+                        <div class="competency-item">
+                            <div class="competency-title">Leadership</div>
+                            <div class="competency-skills">Global Team Management • Cross-Cultural Collaboration • Talent Acquisition & Development</div>
+                        </div>
+                        <div class="competency-item">
+                            <div class="competency-title">Technical</div>
+                            <div class="competency-skills">Internationalization & Accessibility • Test Automation • CI/CD Integration • Quality Engineering</div>
+                        </div>
+                        <div class="competency-item">
+                            <div class="competency-title">Business</div>
+                            <div class="competency-skills">Project Management (PMP) • Process Improvement • Agile Methodologies (Kanban/JIRA)</div>
+                        </div>
+                        <div class="competency-item">
+                            <div class="competency-title">Globalization</div>
+                            <div class="competency-skills">Globalization Enablement • Customer Engagement • Retention Strategies</div>
+                        </div>
+                        <div class="competency-item">
+                            <div class="competency-title">Product Leadership and Management</div>
+                            <div class="competency-skills">Pursuing Masters in Product Leadership • Developed prototypes and product artifacts using AI tools</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Experience -->
+                <div class="section">
+                    <h2 class="section-title">Professional Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="role-title">Manager, Internationalization Development</div>
+                                <div class="company">ORACLE INDIA</div>
+                            </div>
+                            <div class="period">June 2009 – Present<br>(16+ years)</div>
+                        </div>
+                        <ul class="experience-points">
+                            <li>Lead <strong>Globalization Enablement, GAT Automation, Deployment & India Operations</strong> for Oracle International Product Solutions (IPS) Group</li>
+                            <li>Architected organization-wide <strong>"Cross Functional Testing Automation Solution"</strong> serving as certification platform for Globalization, Accessibility, UI Layout, and Security</li>
+                            <li>Initiated, architected and delivered <strong>brand new Analytics Dashboard service</strong> for Global Automation Technology Service depicting <strong>Customer/Products Adoption</strong></li>
+                            <li>Serve as key stakeholder for <strong>Internationalization in IPS Globalization Governance System (G360)</strong> with comprehensive governance framework</li>
+                            <li>Led <strong>Fusion Applications Globalization QA</strong> & delivered <strong>Globalization Chapter Guides, Static Code analysis tools</strong> for internationalization standards</li>
+                            <li>Built and scaled <strong>multiple high-performing teams from inception</strong>, managing comprehensive programs and executing <strong>customer engagement strategies</strong></li>
+                            <li>Developed <strong>BIEE-based QA Metrics Dashboards</strong> for performance reporting</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="role-title">QA Manager & Project Lead QA</div>
+                                <div class="company">ORACLE INDIA</div>
+                            </div>
+                            <div class="period">June 2002 – May 2009<br>(7 years)</div>
+                        </div>
+                        <ul class="experience-points">
+                            <li>Managed QA operations for <strong>Development Services & Infrastructure Tools Division</strong> for Application Development Productivity products including <strong>Enterprise Management System (EMS), Patch Tracking System (PTS) & Oracle Applications Database - OAM products</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div>
+                                <div class="role-title">Test Consultant</div>
+                                <div class="company">AMITY SOFT TECHNOLOGIES</div>
+                            </div>
+                            <div class="period">May 2001 – May 2002<br>(1 year)</div>
+                        </div>
+                        <ul class="experience-points">
+                            <li>Executed comprehensive testing for <strong>SISL's Telecom Software Products</strong> and successfully deployed Call Connect Server at BSNL Karnal customer site</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Key Achievements -->
+                <div class="section">
+                    <h2 class="section-title">Key Achievements</h2>
+                    <div class="achievements-grid">
+                        <div class="achievement-item">
+                            Built and developed & operated <strong>multiple teams from inception</strong> including startup-mode operations
+                        </div>
+                        <div class="achievement-item">
+                            Led & evangelized <strong>enterprise-grade automation solutions</strong> serving as certification platform for multiple functions
+                        </div>
+                        <div class="achievement-item">
+                            Successfully managed <strong>end-to-end talent acquisition</strong> (lateral and campus hiring) and retention strategies
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Education -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Education</h3>
+                    <div class="sidebar-item">
+                        <div class="sidebar-item-title">Executive MBA, Product Leadership</div>
+                        <div class="sidebar-item-detail">Institute of Product Leadership<br>2023-2025 (In Progress)</div>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-item-title">B.E. Electronics & Communication</div>
+                        <div class="sidebar-item-detail">Madras University<br>2000</div>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-item-title">Diploma in Software Testing</div>
+                        <div class="sidebar-item-detail">Amity Soft Technologies<br>2001</div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Certifications</h3>
+                    <div class="sidebar-item">
+                        <div class="sidebar-item-title">PMP (May 2016)</div>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-item-title">Design Thinking</div>
+                        <div class="sidebar-item-detail">NPTEL & IIM Bangalore</div>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-item-title">Performance Analysis and Queuing Systems</div>
+                        <div class="sidebar-item-detail">IIT Bombay</div>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-item-title">Entrepreneurship</div>
+                        <div class="sidebar-item-detail">LinkedIn</div>
+                    </div>
+                </div>
+
+                <!-- Awards -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Awards</h3>
+                    <div class="award-item">
+                        <div class="award-title">Commitment to Excellence Award</div>
+                        <div class="award-org">Institute of Product Leadership | March 2025</div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-title">Outstanding Team Contribution for EMS Product Quality</div>
+                        <div class="award-org">Oracle India | May 2007</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thought Leadership -->
+        <div class="thought-leadership">
+            <h2 class="section-title">Social - Thought Leadership</h2>
+            
+            <div class="content-category">
+                <h4>Video Content</h4>
+                <div class="content-item">
+                    <a href="https://lnkd.in/gZfW-_pN" target="_blank">7 Essences of Building Products - Product Leadership Podcast</a>
+                </div>
+            </div>
+
+            <div class="content-category">
+                <h4>LinkedIn Articles & Blogs</h4>
+                <div class="content-item">
+                    <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7304572152056270849/" target="_blank">Automation Gone Wrong: Post-Purchase Experience Analysis</a>
+                </div>
+                <div class="content-item">
+                    <a href="https://www.linkedin.com/posts/activity-7306702498256338944-EaQg/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAFxtSIBSTKpGhj5Ee-9WOO06vSQdpDF-Vo" target="_blank">The Intrinsic Approach to Conflict Management</a>
+                </div>
+                <div class="content-item">
+                    <a href="https://www.linkedin.com/pulse/product-management-football-field-orchestrating-game-subramanian-ctc2c/?trackingId=ayTdbz0C2N5w4oMJVAK7EA%3D%3D" target="_blank">Product Management in a Football Field</a>
+                </div>
+                <div class="content-item">
+                    <a href="https://www.linkedin.com/posts/activity-7312071476319244288-g13R?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAFxtSIBSTKpGhj5Ee-9WOO06vSQdpDF-Vo" target="_blank">Resilience & Teamwork Lessons from Sports</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Information -->
+        <div class="additional-info">
+            <h2 class="section-title" style="border-bottom-color: #bdc3c7;">Additional Information</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h4>Volunteer Experience</h4>
+                    <p>Oracle Volunteers program - local school development projects in Bangalore</p>
+                </div>
+                <div class="info-item">
+                    <h4>Content Creation</h4>
+                    <p>Penned cricket columns for college newsletter</p>
+                </div>
+                <div class="info-item">
+                    <h4>Languages</h4>
+                    <p>English (Fluent), Hindi (Conversational), Tamil (Native)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="print-btn" onclick="printCV()">📄 Print CV</button>
+
+    <script>
+        function printCV() {
+            alert('💡 For perfect PDF:\n\n1. Click "More settings"\n2. Enable "Background graphics"\n3. Set Paper size to A4\n4. Margins: Minimum\n5. Save as PDF');
+            window.print();
+        }
+
+        // Smooth animations on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.section, .sidebar-section, .competency-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            items.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(10px)';
+                item.style.transition = 'all 0.4s ease';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
